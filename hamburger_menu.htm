@@ -7,16 +7,17 @@
 	<link href="Style.css" rel="stylesheet">
 <script>
 	function openSlideMenu(){
-		document.getElementById('menu').style.width = '250px'
-		document.getElementById('content').style.marginLeft = '250px'
+		document.getElementById('sidebar').style.width = '75px'
+		document.getElementById('menu').style.width = '200px'
+		document.getElementById('menu').style.marginLeft= '75px'
+		document.getElementById('content').style.marginLeft = '200px'
 	}
 	
 	function closeSlideMenu(){
+		document.getElementById('sidebar').style.width = '75px'
 		document.getElementById('menu').style.width = '0'
+		document.getElementById('menu').style.marginLeft= '0'
 		document.getElementById('content').style.marginLeft = '0'
-	}function openSlideMenu(){
-		document.getElementById('menu').style.width = '250px'
-		document.getElementById('content').style.marginLeft = '250px'
 	}
 </script>
 </head>
@@ -24,20 +25,25 @@
 	
 	<div id="content">
 	
-		<span class="slide">
-			<a href="#" onclick="openSlideMenu()">
+		<div id="sidebar" class="sidebar">
+		
+			<a href="#" class = "toggle" onclick="openSlideMenu()">
 				<i class="fas fa-bars"></i>
 			</a>
-		</span>
-		
-		<div id="menu" class="nav">
+			
 			<a href="#" class = "close" onclick="closeSlideMenu()">
 				<i class="fas fa-times"></i>
 			</a>
+			
+		</div>
+		
+		<div id="menu" class="nav">
 			<a href="#">Home</a>
 			<a href="#">Settings</a>
 			<a href="#">Logout</a>
 		</div>
+		
+
 		
 		<h1> REST OF THE PAGE GOES HERE </h1>
 	</div>

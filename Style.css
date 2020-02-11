@@ -2,8 +2,37 @@
 
 body{
 	font-family: 'Alegreya Sans', sans-serif;
-	overflow-x: hidden;
 }
+
+.sidebar{
+	height: 100%;
+	width: 75px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background-color: #002F8B;
+	border-right: solid 2px #111;
+}
+
+.sidebar .toggle{
+	position: absolute;
+	top: 20px;
+	right: 22px;
+	margin-left: 50px;
+	font-size: 30px;
+	color: #111;
+}
+
+.sidebar .close {
+	position: absolute;
+	top: 0;
+	right: 22px;
+	margin-left: 50px;
+	font-size: 30px;
+	display: none;
+}
+
 .nav{
 	height: 100%;
 	width: 0;
@@ -11,8 +40,8 @@ body{
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #111;
-	opacity: .9;
+	background-color: #E31B23;
+	opacity: 1;
 	overflow-x: hidden;
 	padding-top: 60px;
 	transition: 0.7s;
@@ -23,25 +52,20 @@ body{
 	padding: 20px 30px;
 	font-size: 25px;
 	text-decoration: none;
-	color: #CCC;
+	color: #111;
+	border-top: solid 2px #111;
 }
 .nav a:hover {
 	color: #fff;
 	transition: 0.4s;
 }
 
-.nav .close {
-	position: absolute;
-	top: 0;
-	right: 22px;
-	margin-left: 50px;
-	font-size: 30px;
-}
-.slide a {
-	color: #000;
-	font-size: 36px;
+.nav .last {
+	border-bottom:solid 2px #111;
 }
 #content{
+	position: relative;
+	left: 75px;
 	padding: 20px;
 	transition: margin-left 0.7s;
 	overflow: hidden;
