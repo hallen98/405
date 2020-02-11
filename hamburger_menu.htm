@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Hamburger Menu</title>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+	</script>
+	<link href="Style.css" rel="stylesheet">
+<script>
+	function openSlideMenu(){
+		document.getElementById('menu').style.width = '250px'
+		document.getElementById('content').style.marginLeft = '250px'
+	}
+	
+	function closeSlideMenu(){
+		document.getElementById('menu').style.width = '0'
+		document.getElementById('content').style.marginLeft = '0'
+	}function openSlideMenu(){
+		document.getElementById('menu').style.width = '250px'
+		document.getElementById('content').style.marginLeft = '250px'
+	}
+</script>
+</head>
 <body>
-
-<a HREF= "http://www.google.com"> Google </a>  <!--  testing out link -->
-
+	
+	<div id="content">
+	
+		<span class="slide">
+			<a href="#" onclick="openSlideMenu()">
+				<i class="fas fa-bars"></i>
+			</a>
+		</span>
+		
+		<div id="menu" class="nav">
+			<a href="#" class = "close" onclick="closeSlideMenu()">
+				<i class="fas fa-times"></i>
+			</a>
+			<a href="#">Home</a>
+			<a href="#">Settings</a>
+			<a href="#">Logout</a>
+		</div>
+		
+		<h1> REST OF THE PAGE GOES HERE </h1>
+	</div>
 </body>
 </html>
