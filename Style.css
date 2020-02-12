@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya+sans:800')
-
 body{
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Arial', sans-serif;
 }
 
 .sidebar{
@@ -18,19 +16,14 @@ body{
 .sidebar .toggle{
 	position: absolute;
 	top: 20px;
-	right: 22px;
-	margin-left: 50px;
-	font-size: 30px;
-	color: #111;
+	right: 17px;
+	margin: auto;
+	font-size: 50px;
+	color: #A2AAAD;
 }
-
-.sidebar .close {
-	position: absolute;
-	top: 0;
-	right: 22px;
-	margin-left: 50px;
-	font-size: 30px;
-	display: none;
+.sidebar a:hover{
+	color: #111;
+	transition: 0.4s;
 }
 
 .nav{
@@ -43,8 +36,8 @@ body{
 	background-color: #E31B23;
 	opacity: 1;
 	overflow-x: hidden;
-	padding-top: 60px;
 	transition: 0.7s;
+	border-right: solid 2px #111;
 }
 
 .nav a {
