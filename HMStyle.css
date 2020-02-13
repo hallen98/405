@@ -2,7 +2,7 @@ body{
 	font-family: 'Arial', sans-serif;
 }
 
-.sidebar{
+.sidebar{                       /* blue sidebar*/
 	height: 100%;
 	width: 75px;
 	position: fixed;
@@ -13,7 +13,7 @@ body{
 	border-right: solid 2px #111;
 }
 
-.sidebar .toggle{
+.sidebar .toggle{               /*hamburger menu button*/
 	position: absolute;
 	top: 20px;
 	right: 17px;
@@ -21,12 +21,12 @@ body{
 	font-size: 50px;
 	color: #A2AAAD;
 }
-.sidebar a:hover{
+.sidebar a:hover{               /*Hover over hamburger button*/
 	color: #111;
 	transition: 0.4s;
 }
 
-.nav{
+.nav{                           /*red slide out menu*/
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -40,7 +40,7 @@ body{
 	border-right: solid 2px #111;
 }
 
-.nav a {
+.nav a {                        /*links in slide out menu*/
 	display: block;
 	padding: 20px 30px;
 	font-size: 25px;
@@ -48,12 +48,12 @@ body{
 	color: #111;
 	border-top: solid 2px #111;
 }
-.nav a:hover {
+.nav a:hover {                  /*hover over links*/
 	color: #fff;
 	transition: 0.4s;
 }
 
-.nav .last {
+.nav .last {                    /*last link needs a bottom border to finish boxes*/
 	border-bottom:solid 2px #111;
 }
 #content{
