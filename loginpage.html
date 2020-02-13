@@ -1,0 +1,32 @@
+<html>
+<!-- THIS USES THE DISCORD IMAGE LINK FOR THE LOGO AT THE TOP -->
+<h1><center><img src="https://cdn.discordapp.com/attachments/672878316335923221/672905066189029376/Header.png" alt="AMELogo"></center></h1>
+
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+	<body>
+		<div class="login">
+			<h1>Login</h1>
+			<form action="authenticate.php" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<p>
+					<a href="/resetpassword">Reset Password</a>
+					<br>Don't have an account? <a href="/signup">Sign up here!</a>
+					<br><input type="checkbox" name="rememberbox" value="remember">
+					<label for="rememberbox">Remember me</label>
+				</p>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</body>
+</html>
