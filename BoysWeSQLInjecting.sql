@@ -55,7 +55,6 @@ CREATE TABLE IF NOT EXISTS `AttendenceMadeEasy`.`classes` (
   `location` VARCHAR(255) NULL,
   `className` VARCHAR(45) NULL,
   `classTime` TIME NULL,
-  `classescol` VARCHAR(45) NULL,
   PRIMARY KEY (`idclasses`, `teacher_idteacher`),
   INDEX `fk_classes_teacher1_idx` (`teacher_idteacher` ASC) VISIBLE)
 ENGINE = InnoDB;
