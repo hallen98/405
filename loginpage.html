@@ -4,21 +4,18 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Login</title>
+	<title>Attendance Made Easy Login</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 	<body>
 		<div class="login">
 			<h1>Login</h1>
+			<!-- marks the entire section as a form and sets up php submittion -->
 			<form action="authenticate.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
+				<!-- creates the input boxes with css file style -->
+				<input type="text" name="email" placeholder="Email" id="email" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
+				<!-- links for the reset password and sign up !!!!!! MAY HAVE TO BE CHANGED !!!!!! -->
 				<p>
 					<a href="/resetpassword">Reset Password</a>
 					<br>Don't have an account? <a href="/signup">Sign up here!</a>
