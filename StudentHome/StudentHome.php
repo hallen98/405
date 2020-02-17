@@ -21,7 +21,7 @@
 			document.getElementById('sidebar').style.width = '75px'
 			document.getElementById('menu').style.width = '200px'
 			document.getElementById('menu').style.marginLeft= '75px'
-			document.getElementById('content').style.marginLeft = '200px'
+			document.getElementById('content').style.marginLeft = '0'
 		}
 	}
 	
