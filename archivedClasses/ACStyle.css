@@ -94,9 +94,18 @@ select {
 	font-size:30px;
 }
 
-p {
-	display: block;
+
+.container {
+	top: 150px;
+	left: 800px;
+	height: 500px;
+	width: 300px;
+	position: relative; 
+}
+.vertical-center {
+	margin: 0;
 	position: absolute;
-	left: 700;
-	top: 500;
+	left: 80px;
+	top: 50%;
+	border: solid 2px #111;
 }
