@@ -93,3 +93,10 @@ input {
 select {
 	font-size:30px;
 }
+
+p {
+	display: block;
+	position: absolute;
+	left: 700;
+	top: 500;
+}
