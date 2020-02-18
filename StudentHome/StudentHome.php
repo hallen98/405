@@ -40,10 +40,10 @@
 		</div>
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
-			<a href="#">Home</a>
+			<a href="/StudentHome/StudentHome.php">Home</a>
 			<a href="#">Settings</a>
 			<div class="last">
-				<a href="#">Logout</a>
+				<a href="/login/loginpage.php">Logout</a>
 			</div>
 		</div>
 		
