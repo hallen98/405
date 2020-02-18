@@ -82,9 +82,44 @@
 			</div>
 				
 			<div class="container">
+<<<<<<< HEAD
+				<table style="width:100%">
+					<tr>
+						<th><input type="checkbox" />    &nbsp;   </th>
+						<th>Name</th>
+						<th>Class Date</th>
+						<th>Archived Date</th>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />    &nbsp;   </td>
+						<td>CSC-405-001</td>
+						<td>MWF 2:00 - 3:15</td>
+						<td>10/15/17</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />    &nbsp;   </td>
+						<td>CSC-405-001</td>
+						<td>MWF 2:00 - 3:15</td>
+						<td>10/15/18</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />    &nbsp;   </td>
+						<td>CSC-405-001</td>
+						<td>MWF 2:00 - 3:15</td>
+						<td>10/15/19</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" />    &nbsp;   </td>
+						<td>CSC-405-001</td>
+						<td>MWF 2:00 - 3:15</td>
+						<td>10/15/20</td>
+					</tr>
+				</table>
+=======
 				<div class="vertical-center">
 					<p>Table Will go here.</p>
 			  </div>
+>>>>>>> c70ad113256635f436b3b62fe4d2e0f43394c03c
 			</div>
 		
 		

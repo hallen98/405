@@ -96,16 +96,24 @@ select {
 
 
 .container {
-	top: 150px;
-	left: 800px;
-	height: 500px;
-	width: 300px;
-	position: relative; 
+	top:150px;
+	margin: auto;
+	height: 700px;
+	width: 1600px;
+	position: relative;	
 }
-.vertical-center {
-	margin: 0;
-	position: absolute;
-	left: 80px;
-	top: 50%;
-	border: solid 2px #111;
+
+table, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th{
+	height: 50px;
+	font-size: 25px;
+}
+td { 
+	text-align: center;
+	height: 30px;
+	font-size: 16px;
 }
