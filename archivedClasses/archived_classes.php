@@ -82,7 +82,6 @@
 			</div>
 				
 			<div class="container">
-<<<<<<< HEAD
 				<table style="width:100%">
 					<tr>
 						<th><input type="checkbox" />    &nbsp;   </th>
@@ -115,14 +114,7 @@
 						<td>10/15/20</td>
 					</tr>
 				</table>
-=======
-				<div class="vertical-center">
-					<p>Table Will go here.</p>
-			  </div>
->>>>>>> c70ad113256635f436b3b62fe4d2e0f43394c03c
 			</div>
-		
-		
 		</div>
 	</div>
 </body>
