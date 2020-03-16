@@ -46,3 +46,15 @@
 	background-color: #940000;
   	transition: background-color 0.2s;
 }
+table, tr {
+    border: 1px solid black;
+	border-collapse: collapse;
+}
+th, tr, td {
+	text-align: center;
+}
+.checkBoxes {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100px;
+}
