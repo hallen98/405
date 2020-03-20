@@ -80,3 +80,19 @@ table.center{
 tr:hover{
 	background-color: #f5f5f5;
 }
+.ExportBtn {
+	width: 100px;
+  	padding: 10px;
+  	background-color: #002F8B;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+	font-size: 14px;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.ExportBtn:hover {
+	background-color: #000070;
+  	transition: background-color 0.2s;
+}
