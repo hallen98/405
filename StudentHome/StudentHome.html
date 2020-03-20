@@ -65,9 +65,9 @@
 		
 		<!-- !!!!!! EXAMPLE TABLE !!!!!! -->
 		<center>
-			<table class="ctable" style="width:70%">
+			<table class="ctable" style="width:70%; border-collapse: collapse;">
 				<tr>
-					<th class="checkBoxes"><input type="checkbox" onClick="toggle(this)"></th>
+					<th><input type="checkbox" onClick="toggle(this)"></th>
 					<th>Class</th>
 					<th>Time</th>
 					<th>Last Check In</th>
@@ -95,9 +95,9 @@
 					<td><img src="x.png" alt="X"></td>
 				</tr>
 				<!-- ADDS THE ADD CLASS BUTON AND TEXT INPUT TO LINE UP WITH THE FIRST TWO COLUMBS IN THE TABLE -->
-				<tr>
+				<tr class="tableRow">
 					<td><button class="acbtn">Add Class</button></td>
-					<td><input type="text" name="classcode" placeholder="Class Code" id="classcode"></td>
+					<td><input style="visibility: hidden;"type="text" name="classcode" placeholder="Class Code" id="classcode"></td>
 					<td></td>
 					<td></td>
 					<td></td>

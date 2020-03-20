@@ -46,12 +46,16 @@
 	background-color: #940000;
   	transition: background-color 0.2s;
 }
-table, tr {
+.tableRow {
     border: 1px solid black;
 	border-collapse: collapse;
 }
 th, tr, td {
 	text-align: center;
+}
+th{
+	font-size: 22px;
+	line-height: 50px;
 }
 .checkBoxes {
 	border: 1px solid black;
