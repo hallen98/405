@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Settings</title>
+	<title>Settings | AttendMe</title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">       <!-- has image of hamburger menu -->
 	</script>
 	<link href="Style.css" rel="stylesheet">                                       <!--link to css -->
@@ -29,7 +29,6 @@
 <body>
 	
 	<div id="content">
-	
 		<div id="sidebar" class="sidebar">
 		
 			<a href="#" id="burger" class = "toggle" onclick="openSlideMenu()">         <!-- hamburger menu -->
@@ -45,19 +44,36 @@
 				<a href="#">Logout</a>
 			</div>
 		</div>
-		
-
-		
+			
 		<H1> Profile Settings</H1>
 		
-		<form action=#>
-			<input type="text" id="FirstName" name="FirstName" placeholder="First Name"><br><br>
-			<input type="text" id="LastName" name="LastName" placeholder="Last Name"><br><br><br><br><br>
-			<input type="text" id="NewEmail" name="NewEmail" placeholder="New Email"><br><br>
-			<input type="text" id="ConfirmEmail" name="ConfirmEmail" placeholder="Confirm Email"><br><br><br><br><br>
-			<input type="password" id="NewPassword" name="NewPassword" placeholder="New Password"><br><br>
-			<input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
-		</form>
+		<div id = "DeleteWrapper">
+			<div class="RedBoxed">
+				Delete Account   
+				<input type="checkbox" id="Delete" name="Delete">
+			</div><br>
+			By checking the box, AttendMe will <br>
+			permanently delete your account and it <br>
+			<b>CANNOT BE UNDELETED</b>, by checking the <br>
+			box you understand and agree to the <br>
+			terms above
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+		
+		<div class="Input">
+			<form action=#>
+				<input type="text" id="FirstName" name="FirstName" placeholder="First Name"><br><br>
+				<input type="text" id="LastName" name="LastName" placeholder="Last Name"><br><br><br><br><br><br><br><br><br><br>
+				<input type="text" id="NewEmail" name="NewEmail" placeholder="New Email"><br><br>
+				<input type="text" id="ConfirmEmail" name="ConfirmEmail" placeholder="Confirm Email"><br><br><br><br><br><br><br><br><br><br>
+				<input type="password" id="NewPassword" name="NewPassword" placeholder="New Password"><br><br>
+				<input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
+			</form>
+		</div>
+		
+		<div id = "ButtonWrapper">
+			<button type="button">Confirm Changes</button>
+		</div>
 	</div>
 </body>
 </html>

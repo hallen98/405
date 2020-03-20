@@ -67,12 +67,51 @@ body{
 H1{
 	text-align: center;
 }
+
+#body{
+	margin-left: auto;
+	margin-right: auto;
+	height: 800px;
+	width: 1280px;
+}
+#DeleteWrapper{
+	float: right;
+	width: 30%;
+	margin: 0 1.5%;
+}
+.RedBoxed {
+	width: 300px;
+	height: 50px;
+	border: 1px solid black ;
+	font-size:36px;
+	background-color: red;
+	color: white;
+}
+
+.Input {
+	float: left;
+	width: 63%;
+	margin: 0 1.5%;
+}
+
 input[type="text"]
 {
+	position: relative;
     font-size:36px;
 }
 
 input[type="password"]
 {
     font-size:36px;
+}
+#ButtonWrapper{
+	float: right;
+	width: 30%;
+	margin: 0 1.5%;
+}
+
+button{
+    font-size:20px;
+	height:50px;
+    width: 300px;
 }
