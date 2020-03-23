@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Archived Classes | AME</title>
+	<title>Archived Classes | AttendMe</title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">          <!-- has image of hamburger menu -->
 	</script>
 	<link href="ACStyle.css" rel="stylesheet">                                          <!--link to css -->
