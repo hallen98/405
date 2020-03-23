@@ -24,6 +24,13 @@
 		}
 	}
 	
+	function toggle(source) {
+		var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+		for (var i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i] != source)
+				checkboxes[i].checked = source.checked;
+    }
+}
 </script>
 </head>
 <body>
@@ -84,37 +91,41 @@
 			<div class="container">
 				<table style="width:100%">
 					<tr>
-						<th><input type="checkbox" />    &nbsp;   </th>
+						<th><input type="checkbox" onClick="toggle(this)" /> </th>
 						<th>Name</th>
 						<th>Class Date</th>
 						<th>Archived Date</th>
 					</tr>
 					<tr>
-						<td><input type="checkbox" />    &nbsp;   </td>
+						<td><input type="checkbox" name= "check" />     </td>
 						<td>CSC-405-001</td>
 						<td>MWF 2:00 - 3:15</td>
 						<td>10/15/17</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" />    &nbsp;   </td>
+						<td><input type="checkbox" name= "check" />     </td>
 						<td>CSC-405-001</td>
 						<td>MWF 2:00 - 3:15</td>
 						<td>10/15/18</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" />    &nbsp;   </td>
+						<td><input type="checkbox" name= "check" />     </td>
 						<td>CSC-405-001</td>
 						<td>MWF 2:00 - 3:15</td>
 						<td>10/15/19</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" />    &nbsp;   </td>
+						<td><input type="checkbox" name= "check" />     </td>
 						<td>CSC-405-001</td>
 						<td>MWF 2:00 - 3:15</td>
 						<td>10/15/20</td>
 					</tr>
-				</table>
+				</table><br>
+				<button type="button">Unarchive</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button">Delete</button>
 			</div>
+			
+		
 		</div>
 	</div>
 </body>
