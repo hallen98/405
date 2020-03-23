@@ -84,7 +84,7 @@ H1{
 	height: 50px;
 	border: 1px solid black ;
 	font-size:36px;
-	background-color: red;
+	background: linear-gradient(to right, red 0%, red 83%, grey 83%, grey 100%);
 	color: white;
 }
 
@@ -103,6 +103,11 @@ input[type="text"]
 input[type="password"]
 {
     font-size:36px;
+}
+[type="checkbox"]
+{
+	margin-left:15px;
+    vertical-align:middle;
 }
 #ButtonWrapper{
 	float: right;
