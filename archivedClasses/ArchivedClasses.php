@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Archived Classes | AME</title>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	<title>Archived Classes | AttendMe</title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">          <!-- has image of hamburger menu -->
 	</script>
@@ -48,11 +50,11 @@
 			</div>
 			
 			<div id="menu" class="nav">                                                          <!-- links -->
-				<a href="#">Current Classes</a>
-				<a href="#">Archived Classes</a>
-				<a href="#">Settings</a>
+				<a href="/TeacherHome/teacherHome.php">Current Classes</a>
+				<a href="/archivedRoll/ArchivedClasses.php">Archived Classes</a>
+				<a href="/Settings/TeacherSettings.php">Settings</a>
 				<div class="last">
-					<a href="#">Logout</a>
+					<a href="/login/LoginPage.php">Logout</a>
 				</div>
 			</div>
 		</div>
@@ -124,8 +126,6 @@
 				<button type="button">Unarchive</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button type="button">Delete</button>
 			</div>
-			
-		
 		</div>
 	</div>
 </body>
