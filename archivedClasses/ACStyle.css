@@ -1,0 +1,128 @@
+body{
+	font-family: 'Arial', sans-serif;
+}
+
+.sidebar{                       /* blue sidebar*/
+	height: 100%;
+	width: 75px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background-color: #002F8B;
+	border-right: solid 2px #111;
+}
+
+.sidebar .toggle{               /*hamburger menu button*/
+	position: absolute;
+	top: 20px;
+	right: 17px;
+	margin: auto;
+	font-size: 50px;
+	color: #A2AAAD;
+}
+.sidebar a:hover{               /*Hover over hamburger button*/
+	color: #111;
+	transition: 0.4s;
+}
+
+.nav{                           /*red slide out menu*/
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #E31B23;
+	opacity: 1;
+	overflow-x: hidden;
+	transition: 0.7s;
+	border-right: solid 2px #111;
+}
+
+.nav a {                        /*links in slide out menu*/
+	display: block;
+	padding: 20px 30px;
+	font-size: 25px;
+	text-decoration: none;
+	color: #111;
+	border-top: solid 2px #111;
+}
+.nav a:hover {                  /*hover over links*/
+	color: #fff;
+	transition: 0.4s;
+}
+
+.nav .last {                    /*last link needs a bottom border to finish boxes*/
+	border-bottom:solid 2px #111;
+}
+#content{
+	position: relatiive;
+	transition: margin-left 0.7s;
+	width: 100%;
+}
+
+h1{
+	font-size:50px;
+	text-align:center;
+}
+#startDay {
+	position:absolute;
+	left: 155px;
+}
+#startDate{
+	text-align: center;
+}
+
+#endDate{
+	text-align: center;
+}
+
+#endDay {
+	position:absolute;
+	left: 555px;
+}
+#quarterSelect{
+	position:absolute;
+	left: 1400px;
+}
+label {
+	display: block;
+	width: 150px;
+	font-size: 30px;
+	margin:auto;
+}
+input {
+	font-size:30px;
+}
+
+select {
+	font-size:30px;
+}
+
+
+.container {
+	top:150px;
+	margin: auto;
+	height: 300px;
+	width: 1600px;
+	position: relative;	
+}
+
+table, td {
+	border-collapse: collapse;
+}
+
+th{
+	height: 50px;
+	font-size: 30px;
+}
+td { 
+	text-align: center;
+	height: 30px;
+	font-size: 16px;
+	border: 1px solid black;
+}
+button {
+	font-size: 30px;
+}

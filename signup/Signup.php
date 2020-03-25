@@ -10,7 +10,7 @@
 	<body>
 		<div class="signup">
 			<h1>Create Account</h1>
-			<form action="Signup.php" method="post">
+			<form action="/login/loginpage.php" method="post">
 				<!-- sets up input boxes -->
 				<input type="text" name="firstname" placeholder="First Name" id="firstname" required>
 				<input type="text" name="lastname" placeholder="Last Name" id="lastname" required>

@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Home | Attendence Made Easy</title>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">      <!-- has image of hamburger menu -->
-	</script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	<link href="HMStyle.css" rel="stylesheet">                                      <!--link to css -->
 	<link href="SHStyle.css" rel="stylesheet">
 <script>
@@ -40,10 +39,10 @@
 		</div>
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
-			<a href="#">Home</a>
+			<a href="/StudentHome/StudentHome.php">Home</a>
 			<a href="#">Settings</a>
 			<div class="last">
-				<a href="#">Logout</a>
+				<a href="/login/loginpage.php">Logout</a>
 			</div>
 		</div>
 		
@@ -51,7 +50,7 @@
 		
 		<h1><center> Welcome Mike O'Neal </center></h1>
 		
-		<center><button class="cibtn">Check In to: CSC-405-001</button></center>		<!-- Check in button -->
+		<center><button class="cibtn">Check In To: CSC-405-001</button></center>		<!-- Check in button -->
 		<br><br>
 		
 		<!-- SCRIPT FOR CHECK ALL BOX -->
@@ -66,39 +65,42 @@
 		
 		<!-- !!!!!! EXAMPLE TABLE !!!!!! -->
 		<center>
-			<table class="ctable" style="width:70%">
+			<table class="ctable" style="width:70%; border-collapse: collapse;">
 				<tr>
-					<th><input type="checkbox" onClick="toggle(this)">Check All</th>
+					<th><input type="checkbox" onClick="toggle(this)"></th>
 					<th>Class</th>
 					<th>Time</th>
-					<th>Last Checkin</th>
-					<th>Checked in</th>
+					<th>Last Check In</th>
+					<th>Checked In Today</th>
 				</tr>
-				<tr>
-					<th><input type="checkbox" name="checkclass" value="class1"></th>
-					<th>CSC-405-001</th>
-					<th>MWF 2:00-3:15 PM</th>
-					<th>2/2/2020</th>
-					<th><img src="check.png" alt="Check"></th>
+				<tr class="tableRow">
+					<td class="checkBoxes"><input type="checkbox" name="checkclass" value="class1"></td>
+					<td>CSC-405-001</td>
+					<td>MWF 2:00-3:15 PM</td>
+					<td>2/2/2020</td>
+					<td><img src="check.png" alt="Check"></td>
 				</tr>
-				<tr>
-					<th><input type="checkbox" name="checkclass" value="class2"></th>
-					<th>CSC-450-003</th>
-					<th>MWF 10:00-11:15 AM</th>
-					<th>2/2/2020</th>
-					<th><img src="check.png" alt="Check"></th>
+				<tr class="tableRow">
+					<td class="checkBoxes"><input type="checkbox" name="checkclass" value="class2"></td>
+					<td>CSC-450-003</td>
+					<td>MWF 10:00-11:15 AM</td>
+					<td>2/2/2020</td>
+					<td><img src="check.png" alt="Check"></td>
 				</tr>
-				<tr>
-					<th><input type="checkbox" name="checkclass" value="class3"></th>
-					<th>CSC-123-456</th>
-					<th>MWF 8:00-9:15 AM</th>
-					<th>2/1/2020</th>
-					<th><img src="x.png" alt="X"></th>
+				<tr class="tableRow">
+					<td class="checkBoxes"><input type="checkbox" name="checkclass" value="class3"></td>
+					<td>CSC-123-456</td>
+					<td>MWF 8:00-9:15 AM</td>
+					<td>2/1/2020</td>
+					<td><img src="x.png" alt="X"></td>
 				</tr>
 				<!-- ADDS THE ADD CLASS BUTON AND TEXT INPUT TO LINE UP WITH THE FIRST TWO COLUMBS IN THE TABLE -->
-				<tr>
-					<th><input type="text" name="classcode" placeholder="Class Code" id="classcode"></th>
-					<th><button class="acbtn">Add Class</button></th>
+				<tr class="tableRow">
+					<td><button class="acbtn">Add Class</button></td>
+					<td><input style="visibility: hidden;"type="text" name="classcode" placeholder="Class Code" id="classcode"></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<th><button class="delbtn">Delete Class</button></th>

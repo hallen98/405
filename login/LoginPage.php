@@ -11,14 +11,14 @@
 		<div class="login">
 			<h1>Login</h1>
 			<!-- marks the entire section as a form and sets up php submittion -->
-			<form action="authenticate.php" method="post">
+			<form action="/StudentHome/StudentHome.php" method="post">
 				<!-- creates the input boxes with css file style -->
 				<input type="text" name="email" placeholder="Email" id="email" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<!-- links for the reset password and sign up !!!!!! MAY HAVE TO BE CHANGED !!!!!! -->
 				<p>
 					<a href="/resetpassword">Reset Password</a>
-					<br>Don't have an account? <a href="/signup">Sign up here!</a>
+					<br>Don't have an account? <a href="/signup/signup.php">Sign up here!</a>
 					<br><input type="checkbox" name="rememberbox" value="remember">
 					<label for="rememberbox">Remember me</label>
 				</p>
