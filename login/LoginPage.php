@@ -17,7 +17,7 @@
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<!-- links for the reset password and sign up !!!!!! MAY HAVE TO BE CHANGED !!!!!! -->
 				<p>
-					<a href="/resetpassword">Reset Password</a>
+					<a href="/resetpass/resetpassword.php">Reset Password</a>
 					<br>Don't have an account? <a href="/signup/signup.php">Sign up here!</a>
 					<br><input type="checkbox" name="rememberbox" value="remember">
 					<label for="rememberbox">Remember me</label>
