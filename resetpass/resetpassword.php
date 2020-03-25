@@ -16,7 +16,7 @@
 				<input type="password" name="password" placeholder="New Password" id="password" required>
 				<input type="password" name="cfpassword" placeholder="Confirm New Password" id="cfpassword" required>
 				<script src="confirmpw.js"></script>
-				<input type="submit" value="Submit" href="/login/LoginPage.php">
+				<input type="submit" value="Submit" href="/login/loginpage.php">
 			</form>
 		</div>
 	</body>
