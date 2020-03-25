@@ -54,7 +54,7 @@
 				<a href="/archivedRoll/ArchivedClasses.php">Archived Classes</a>
 				<a href="/Settings/TeacherSettings.php">Settings</a>
 				<div class="last">
-					<a href="/login/LoginPage.php">Logout</a>
+					<a href="/login/loginpage.php">Logout</a>
 				</div>
 			</div>
 		</div>
