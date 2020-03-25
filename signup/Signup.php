@@ -25,7 +25,7 @@
 					<label for="teacher">I am a Teacher.</label><br>
 				</p>
 				<script src="confirmpw.js"></script>
-				<input type="submit" value="Submit">
+				<input type="submit" value="Submit" href="/login/LoginPage.php">
 			</form>
 		</div>
 	</body>

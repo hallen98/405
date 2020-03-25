@@ -61,70 +61,62 @@ body{
 	left: 75px;
 	padding: 20px;
 	transition: margin-left 0.7s;
+	overflow: hidden;
 	width: 100%;
 }
-
-h1{
-	font-size:50px;
-	text-align:center;
-}
-#startDay {
-	position:absolute;
-	left: 155px;
-}
-#startDate{
+H1{
 	text-align: center;
 }
 
-#endDate{
-	text-align: center;
+#body{
+	margin-left: auto;
+	margin-right: auto;
+	height: 800px;
+	width: 1280px;
 }
-
-#endDay {
-	position:absolute;
-	left: 555px;
+#DeleteWrapper{
+	float: right;
+	width: 30%;
+	margin: 0 1.5%;
 }
-#quarterSelect{
-	position:absolute;
-	left: 1400px;
-}
-label {
-	display: block;
-	width: 150px;
-	font-size: 30px;
-	margin:auto;
-}
-input {
-	font-size:30px;
-}
-
-select {
-	font-size:30px;
-}
-
-
-.container {
-	top:150px;
-	margin: auto;
-	height: 300px;
-	width: 1600px;
-	position: relative;	
-}
-
-table, td {
-	border-collapse: collapse;
-}
-
-th{
+.RedBoxed {
+	width: 300px;
 	height: 50px;
-	font-size: 30px;
+	border: 1px solid black ;
+	font-size:36px;
+	background: linear-gradient(to right, red 0%, red 83%, grey 83%, grey 100%);
+	color: white;
 }
-td { 
-	text-align: center;
-	height: 30px;
-	font-size: 16px;
-	border: 1px solid black;
+
+.Input {
+	float: left;
+	width: 63%;
+	margin: 0 1.5%;
 }
-button {
-	font-size: 30px;
+
+input[type="text"]
+{
+	position: relative;
+    font-size:36px;
+}
+
+input[type="password"]
+{
+    font-size:36px;
+}
+[type="checkbox"]
+{
+	margin-left:15px;
+    vertical-align:middle;
+}
+#ButtonWrapper{
+	float: right;
+	width: 30%;
+	margin: 0 1.5%;
+}
+
+button{
+    font-size:20px;
+	height:50px;
+    width: 300px;
 }
