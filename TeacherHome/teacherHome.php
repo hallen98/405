@@ -39,10 +39,9 @@
 		</div>
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
-			<a href="/TeacherHome/teacherHome.html">Home</a>
-            <a href="#">Current Classes</a>
-            <a href="#">Archived Classes</a>
-            <a href="#">Settings</a>
+			<a href="/TeacherHome/teacherHome.php">Home</a>
+            <a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
+            <a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
 			</div>
@@ -77,7 +76,7 @@
                         <td>CSC-405-001</td>
                         <td>MWF 2:00-3:15 PM</td>
                         <td>549826</td>
-                        <th style="text-align: right;"><button class="acbtn">Roll</button></th>
+                        <th style="text-align: right;"><button href="/roll/roll.php" class="acbtn">Roll</button></th>
                         <th><button class="acbtn">Set Geolocation</button></th>
                     </tr>
                     <tr class="tableRow">
@@ -85,7 +84,7 @@
                         <td>CSC-450-003</td>
                         <td>MWF 10:00-11:15 AM</td>
                         <td>187205</td>
-                        <th style="text-align: right;"><button class="acbtn">Roll</button></th>
+                        <th style="text-align: right;"><button href="/roll/roll.php" class="acbtn">Roll</button></th>
                         <th><button class="acbtn">Set Geolocation</button></th>
                     </tr>
                     <tr class="tableRow">
@@ -93,7 +92,7 @@
                         <td>CSC-123-456</td>
                         <td>MWF 8:00-9:15 AM</td>
                         <td>184402</td>
-                        <th style="text-align: right;"><button class="acbtn">Roll</button></th>
+                        <th style="text-align: right;"><button href="/roll/roll.php" class="acbtn">Roll</button></th>
                         <th><button class="acbtn">Set Geolocation</button></th>
                     </tr>
                     <!-- ADDS THE ADD CLASS BUTON AND TEXT INPUT TO LINE UP WITH THE FIRST TWO COLUMBS IN THE TABLE -->
