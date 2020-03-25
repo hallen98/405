@@ -41,7 +41,7 @@
 			<a href="/StudentHome/StudentHome.php">Home</a>
 			<a href="/Settings/StudentSettings.php">Settings</a>
 			<div class="last">
-				<a href="/login/LoginPage.php">Logout</a>
+				<a href="/login/loginpage.php">Logout</a>
 			</div>
 		</div>
 
