@@ -46,11 +46,11 @@
 
 		<div id="menu" class="nav">
 			<!-- links -->
-			<a href="#">Current Classes</a>
-			<a href="#">Archived Classes</a>
-			<a href="#">Settings</a>
+			<a href="/TeacherHome/teacherHome.php">Current Classes</a>
+			<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
+			<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
-				<a href="#">Logout</a>
+				<a href="login/LoginPage.php">Logout</a>
 			</div>
 		</div>
 
