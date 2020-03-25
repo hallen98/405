@@ -19,7 +19,7 @@
 				<input type="password" name="cfpassword" placeholder="Confirm Password" id="cfpassword" required>
 				<!-- creates the radio buttons with input being called "acctype" -->
 				<p>
-					<input type="radio" id="student" name="acctype" value="student">
+					<input type="radio" id="student" name="acctype" value="student" checked>
 					<label for="student">I am a Student.</label><br>
 					<input type="radio" id="teacher" name="acctype" value="teacher">
 					<label for="teacher">I am a Teacher.</label><br>
