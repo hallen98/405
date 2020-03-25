@@ -23,34 +23,34 @@
 			document.getElementById('content').style.marginLeft = '0px'
 		}
 	}
-	
+
 </script>
 </head>
 <body>
-	
+
 	<div id="content">
-	
+
 		<div id="sidebar" class="sidebar">
-		
+
 			<a href="#" id="burger" class = "toggle" onclick="openSlideMenu()">              <!-- hamburger menu -->
 				<i class="fas fa-bars"></i>
 			</a>
-			
+
 		</div>
-		
+
 		<div id="menu" class="nav">                                                          <!-- links -->
-			<a href="#">Current Classes</a>
-			<a href="#">Archived Classes</a>
-			<a href="#">Settings</a>
+			<a href="/TeacherHome/teacherHome.php">Current Classes</a>
+			<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
+			<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
-				<a href="#">Logout</a>
+				<a href="/login/LoginPage.php">Logout</a>
 			</div>
 		</div>
 		<H1> Profile Settings</H1>
-				
+
 		<div id = "DeleteWrapper">
 			<div class="RedBoxed">
-				Delete Account   
+				Delete Account
 				<input type="checkbox" id="Delete" name="Delete">
 			</div><br>
 			By checking the box, AttendMe will <br>
@@ -60,7 +60,7 @@
 			the terms above
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div>
-		
+
 		<div class="Input">
 			<form action=#>
 				<input type="text" id="FirstName" name="FirstName" placeholder="First Name"><br><br>
@@ -71,7 +71,7 @@
 				<input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
 			</form>
 		</div>
-		
+
 		<div id = "ButtonWrapper">
 			<button type="button">Confirm Changes</button>
 		</div>
