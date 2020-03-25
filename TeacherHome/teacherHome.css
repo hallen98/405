@@ -1,20 +1,5 @@
-.cibtn {
-	width: 400px;
-  	padding: 15px;
-  	background-color: #E31B23;
-  	border: 0;
-  	cursor: pointer;
-  	font-weight: bold;
-  	color: #ffffff;
-  	transition: background-color 0.2s;
-	font-size: 24px;
-	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-}
-.cibtn:hover {
-	background-color: #940000;
-  	transition: background-color 0.2s;
-}
-.acbtn {
+
+acbtn {
 	width: 100px;
   	padding: 10px;
   	background-color: #002F8B;
@@ -46,16 +31,49 @@
 	background-color: #940000;
   	transition: background-color 0.2s;
 }
+.acbtn {
+	width: 100px;
+  	padding: 10px;
+  	background-color: #002F8B;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+	font-size: 14px;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.acbtn:hover {
+	background-color: #000070;
+  	transition: background-color 0.2s;
+}
+.archBtn {
+	width: 100px;
+  	padding: 10px;
+  	background-color: #002F8B;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+	font-size: 14px;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.archBtn:hover {
+	background-color: #000070;
+  	transition: background-color 0.2s;
+}
 .tableRow {
     border: 1px solid black;
 	border-collapse: collapse;
 }
 th, tr, td {
-	text-align: center;
+    text-align: center;
+    line-height: 30px;
 }
 th{
 	font-size: 22px;
-	line-height: 50px;
+	line-height: 40px;
 }
 .checkBoxes {
 	border: 1px solid black;
