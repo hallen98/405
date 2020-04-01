@@ -1,3 +1,31 @@
+<?php
+$servername = "localhost";
+$username = "commit";
+$password = "TempP@ss124";
+$dbname = "attendencemadeeasy";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+//$sql = "SELECT id, firstname, lastname FROM MyGuests";
+//$result = $conn->query($sql);
+
+//if ($result->num_rows > 0) {
+    // output data of each row
+//    while($row = $result->fetch_assoc()) {
+//        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+//    }
+//} else {
+//    echo "0 results";
+//}
+echo "hello";
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +68,7 @@
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
 			<a href="/StudentHome/StudentHome.php">Home</a>
-			<a href="/Settings/StudentSettings.php">Settings</a>
+			<a href="#">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
 			</div>
@@ -48,7 +76,7 @@
 		
 		<!-- !!!!!!!!!!!! START OF PAGE CONTENT !!!!!!!!!!!! -->
 		
-		<h1><center> Welcome Mike O'Neal </center></h1>
+		<h1 style="text-align: center"> Welcome Mike ONeal</h1>
 		
 		<center><button class="cibtn">Check In To: CSC-405-001</button></center>		<!-- Check in button -->
 		<br><br>
@@ -59,6 +87,14 @@
 			checkboxes = document.getElementsByName('checkclass');
 			for(var i=0, n=checkboxes.length;i<n;i++) {
 				checkboxes[i].checked = source.checked;
+			}
+		}
+		function toggleVisibility() {
+			var x = document.getElementById('classcode');
+			if (x.style.visibility === 'hidden') {
+				x.style.visibility = 'visible';
+			} else {
+				x.style.visibility = 'hidden';
 			}
 		}
 		</script>
@@ -96,8 +132,8 @@
 				</tr>
 				<!-- ADDS THE ADD CLASS BUTON AND TEXT INPUT TO LINE UP WITH THE FIRST TWO COLUMBS IN THE TABLE -->
 				<tr class="tableRow">
-					<td><button class="acbtn">Add Class</button></td>
-					<td><input style="visibility: hidden;"type="text" name="classcode" placeholder="Class Code" id="classcode"></td>
+					<td><button class="acbtn" onClick="toggleVisibility()">Add Class</button></td>
+					<td><input type="text" name="classcode" placeholder="Class Code" class="classcode" id="classcode"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -106,8 +142,6 @@
 					<th><button class="delbtn">Delete Class</button></th>
 				</tr>
 		</center>
-		
-		
 	</div>
 </body>
 </html>
