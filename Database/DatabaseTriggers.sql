@@ -2,8 +2,9 @@
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.PassWordNotHashedError; 
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.roleassign;
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.usercheck;
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.nullemail;
 
- #trigger checks for passHash size#
+#trigger checks for passHash size#
 DELIMITER $$
 USE `attendencemadeeasy`$$
 CREATE
@@ -16,6 +17,24 @@ BEGIN
     #Replace the 4 with Hash length size#
 	IF (char_length(NEW.passHash) < 4 ) THEN
 		SET msg = 'Unable to set password, Not Hashed';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+	END IF;
+END$$
+DELIMITER ;
+
+#trigger checks for new email not null#
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.nullemail
+BEFORE UPDATE ON attendencemadeeasy.usertable
+FOR EACH ROW
+BEGIN
+	DECLARE MSG VARCHAR(255);
+    #Replace the 4 with Hash length size#
+	IF (char_length(NEW.email) = null ) THEN
+		SET msg = 'Unable to set email, No email found';
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
 	END IF;
 END$$
