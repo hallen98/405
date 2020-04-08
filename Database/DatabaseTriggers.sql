@@ -1,7 +1,8 @@
 
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.PassWordNotHashedError; 
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.roleassign;
- 
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.usercheck;
+
  #trigger checks for passHash size#
 DELIMITER $$
 USE `attendencemadeeasy`$$
@@ -40,4 +41,23 @@ BEGIN
 	END IF;
 END$$
 DELIMITER ;
+
+#trigger checks for role #
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.userchecks
+BEFORE INSERT ON attendencemadeeasy.usertable
+FOR EACH ROW
+BEGIN
+	DECLARE MSG VARCHAR(255);
+	IF (NEW.uid = null OR NEW.fname = null OR NEW.lname = null OR NEW.email = null OR NEW.role = null OR NEW.passwordhash = null) THEN
+		SET msg = 'Warning, All fields must be filled';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+	END IF;
+END$$
+DELIMITER ;
+
+
 
