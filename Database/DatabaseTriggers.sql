@@ -32,17 +32,21 @@ FOR EACH ROW
 BEGIN
 	DECLARE MSG VARCHAR(255);
 	IF (NEW.role = 1 ) THEN
-		SET teacher.tid = NEW.uid;
-        SET teacher.User_uid = NEW.uid;
+		INSERT INTO teacher(tid, User_uid)
+        VALUES(NEW.uid,NEW.uid);
 	END IF;
 	IF (NEW.role = 0 ) THEN
-		SET student.sid = NEW.uid;
-        SET student.User_uid = NEW.uid;
+		INSERT INTO studennt(sid, User_uid)
+        VALUES(NEW.uid,NEW.uid);
+	END IF;
+    IF (NEW.role > 1) THEN
+		SET msg = 'Warning,Role assign has an unknown value';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
 	END IF;
 END$$
 DELIMITER ;
 
-#trigger checks for role #
+#trigger checks for userchecks #
 DELIMITER $$
 USE `attendencemadeeasy`$$
 CREATE
@@ -52,7 +56,7 @@ BEFORE INSERT ON attendencemadeeasy.usertable
 FOR EACH ROW
 BEGIN
 	DECLARE MSG VARCHAR(255);
-	IF (NEW.uid = null OR NEW.fname = null OR NEW.lname = null OR NEW.email = null OR NEW.role = null OR NEW.passwordhash = null) THEN
+	IF (NEW.uid = null OR NEW.fname = null OR NEW.lname = null OR NEW.email = null OR NEW.role = null OR NEW.passHash = null) THEN
 		SET msg = 'Warning, All fields must be filled';
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
 	END IF;
