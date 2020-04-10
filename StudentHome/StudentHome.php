@@ -1,3 +1,36 @@
+<?php
+/*$servername = "138.47.204.77";
+$username = "commit";
+$password = "TempP@ss124";
+$dbname = "attendencemadeeasy";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname, 3306);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Success" . PHP_EOL;
+
+//$sql = "SELECT id, firstname, lastname FROM MyGuests";
+//$result = $conn->query($sql);
+
+//if ($result->num_rows > 0) {
+    // output data of each row
+//    while($row = $result->fetch_assoc()) {
+//        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+//    }
+//} else {
+//    echo "0 results";
+//}
+echo "hello";
+$conn->close();*/
+
+$studentName = "Hunter";
+$classes = ["CSC-405-002", "CSC-406-001", "CSC-407-003"];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +73,7 @@
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
 			<a href="/StudentHome/StudentHome.php">Home</a>
-			<a href="/Settings/StudentSettings.php">Settings</a>
+			<a href="#">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
 			</div>
@@ -48,7 +81,7 @@
 		
 		<!-- !!!!!!!!!!!! START OF PAGE CONTENT !!!!!!!!!!!! -->
 		
-		<h1><center> Welcome Mike O'Neal </center></h1>
+		<h1 style="text-align: center"> Welcome <?php echo $studentName; ?></h1>
 		
 		<center><button class="cibtn">Check In To: CSC-405-001</button></center>		<!-- Check in button -->
 		<br><br>
@@ -61,11 +94,19 @@
 				checkboxes[i].checked = source.checked;
 			}
 		}
+		function toggleVisibility() {
+			var x = document.getElementById('classcode');
+			if (x.style.visibility === 'hidden') {
+				x.style.visibility = 'visible';
+			} else {
+				x.style.visibility = 'hidden';
+			}
+		}
 		</script>
 		
 		<!-- !!!!!! EXAMPLE TABLE !!!!!! -->
 		<center>
-			<table class="ctable" style="width:70%; border-collapse: collapse;">
+			<!--<table class="ctable" style="width:70%; border-collapse: collapse;">
 				<tr>
 					<th><input type="checkbox" onClick="toggle(this)"></th>
 					<th>Class</th>
@@ -94,10 +135,9 @@
 					<td>2/1/2020</td>
 					<td><img src="x.png" alt="X"></td>
 				</tr>
-				<!-- ADDS THE ADD CLASS BUTON AND TEXT INPUT TO LINE UP WITH THE FIRST TWO COLUMBS IN THE TABLE -->
 				<tr class="tableRow">
-					<td><button class="acbtn">Add Class</button></td>
-					<td><input style="visibility: hidden;"type="text" name="classcode" placeholder="Class Code" id="classcode"></td>
+					<td><button class="acbtn" onClick="toggleVisibility()">Add Class</button></td>
+					<td><input type="text" name="classcode" placeholder="Class Code" class="classcode" id="classcode"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -105,9 +145,38 @@
 				<tr>
 					<th><button class="delbtn">Delete Class</button></th>
 				</tr>
+				-->
+				<?php
+					echo '<table class="ctable" style="width:70%; border-collapse: collapse;">';
+					echo '<tr>';
+					echo '<th>'.'<input type="checkbox" onClick="toggle(this)">'.'</th>';
+					echo '<th>Class</th>';
+					echo '<th>Time</th>';
+					echo '<th>Last Check In</th>';
+					echo '<th>Checked In Today</th>';
+					echo '</tr>';
+					foreach ($classes as $value){
+						echo '<tr class="tableRow">';
+						echo '<td class="checkBoxes"><input type="checkbox" name="checkclass" value="class2"></td>';
+						echo '<td>CSC-405-002</td>';
+						echo '<td>MWF 10-11:15 AM</td>';
+						echo '<td>2/1/2020</td>';
+						echo '<td><img src="x.png" alt="X"></td>';
+						echo '</tr>';
+					}
+					echo '<tr class="tableRow">';
+					echo '<td><button class="acbtn" onClick="toggleVisibility()">Add Class</button></td>';
+					echo '<td><input type="text" name="classcode" placeholder="Class Code" class="classcode" id="classcode"></td>';
+					echo '<td></td>';
+					echo '<td></td>';
+					echo '<td></td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo '<th><button class="delbtn">Delete Class</button></th>';
+					echo '</tr>';
+					echo '</table>';
+				?>
 		</center>
-		
-		
 	</div>
 </body>
 </html>
