@@ -11,7 +11,7 @@ FOR EACH ROW
 BEGIN
 	DECLARE MSG VARCHAR(255);
     #Replace the 4 with Hash length size#
-	IF (char_length(NEW.passHash) < 4 ) THEN
+	IF (char_length(NEW.passHash) < 56 ) THEN
 		SET msg = 'Unable to set password, Not Hashed';
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
 	END IF;
