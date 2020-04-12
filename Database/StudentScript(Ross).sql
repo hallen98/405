@@ -8,9 +8,11 @@ use attendencemadeeasy;
 SET @YourVAR = 1;
 SELECT c1.className, c1.classTime, c1.dataarchived, c1.weekday From attendencemadeeasy.class c1 WHERE c1.tid_class = @YourVAR AND c1.archived = 1;
 
+#Gets the roll for a specified teacher and class from the arichived section
 use attendencemadeeasy;
 SET @YourTeacherIDVAR = 1;
 SET @YourClassIDVAR = 11111;
 SELECT ut1.lname, sa1.date, sa1.location 
 From attendencemadeeasy.class c1, student_attended sa1, usertable ut1 
 WHERE sa1.tid_class = c1.tid_class AND sa1.idStudent = ut1.uid AND c1.tid_class = @YourTeacherIDVAR AND c1.archived = 1;
+
