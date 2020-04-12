@@ -1,7 +1,14 @@
 <!--Archived roll page -->
 <!-- Code by Michael McCrary -->
 <!--Hamburger menu code done by group member Noah Broussard -->
+<?php
+#---------- HARD CODED VALUES REPLACE WITH SERVER CODING FROM DOAN ---------
+#---------- REFORMATTING MAY BE NEEDED ------------
 
+$attendees = ["Hunter Allen", "Michael McCrary", "Ross Piraino", "Thienduc Doan", "Noah Broussard"];
+$dates = ["3/16", "3/18", "3/20", "3/23", "3/25", "3/27"];
+$attendanceData = ["x", "-", "-", "x", "x", "x", "x", "x", "x", "x", "-", "-", "-", "-", "x", "x", "x", "x", "-", "-", "x", "x", "x", "x", "x", "-", "x", "-", "x", "-"];
+?>
 
 <!DOCTYPE html>
 <html>
@@ -57,8 +64,36 @@
 
 		<!-- Header of Page Section with AME title -->
 		<h1 style="text-align: center">CSC-406-002</h1>
-
+		
 		<table class="center">
+		<?php
+			echo "<tr>";
+			echo "<th><p>Student Name</p></th>";
+			for ($i=0; $i<count($dates); $i++){
+				echo "<th><p>\"$dates[$i]\"</p></th>";
+			}
+			for ($i=0; $i<count($attendees); $i++){
+				echo "<td><p>\"$attendees[$i]\"</p></td>";
+				for ($day=0; $day<count($dates); $day++){
+					echo "<td><p>";
+					echo $attendanceData[($day * count($attendees))];
+					echo "</p></td>";
+				}
+			}
+		?>
+		<!-- OLD CODE BELOW -->
+		<!--<table class="center">
+			<tr>
+				<th>
+					<p>Student Name</p>
+				</th>
+				?php for ($i=0; $i<5; $i++) { ?>
+				<th>
+					<p>?php echo $i; ?></p>
+				</th>
+				?php } ?>
+			</tr>
+		<!-- <table class="center">
 			<tr>
 				<th>
 					<p>Student Name</p>
@@ -305,7 +340,7 @@
 			<td>
 				<p>x</p>
 			</td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td><button class="ExportBtn">Export to CSV</button></td>
 			</tr>
