@@ -1,3 +1,18 @@
+<?php
+$servername = "138.47.204.77";
+$username = "commit";
+$password = "TempP@ss124"
+$dbname = "attendencemadeeasy";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+	die("Connection Failed: ") . $conn->connect_error);
+}
+
+?>
+
 <html>
 <!-- THIS USES THE DISCORD IMAGE LINK FOR THE LOGO AT THE TOP -->
 <h1><center><img src="https://cdn.discordapp.com/attachments/672878316335923221/672905066189029376/Header.png" alt="AMELogo"></center></h1>
