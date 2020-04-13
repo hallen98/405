@@ -1,10 +1,7 @@
 
-DROP TRIGGER  IF EXISTS  attendencemadeeasy.PassWordNotHashedError; 
-DROP TRIGGER  IF EXISTS  attendencemadeeasy.roleassign;
-DROP TRIGGER  IF EXISTS  attendencemadeeasy.usercheck;
-DROP TRIGGER  IF EXISTS  attendencemadeeasy.nullemail;
 
-#trigger checks for passHash size#
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.PassWordNotHashedError; 
+#trigger checks for passHash size on update#
 DELIMITER $$
 USE `attendencemadeeasy`$$
 CREATE
@@ -22,6 +19,8 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.nullemail;
 #trigger checks for new email not null#
 DELIMITER $$
 USE `attendencemadeeasy`$$
@@ -40,6 +39,8 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.roleassign;
 #trigger checks for role #
 DELIMITER $$
 USE `attendencemadeeasy`$$
@@ -55,7 +56,7 @@ BEGIN
         VALUES(NEW.uid,NEW.uid);
 	END IF;
 	IF (NEW.role = 0 ) THEN
-		INSERT INTO studennt(sid, User_uid)
+		INSERT INTO student(sid, User_uid)
         VALUES(NEW.uid,NEW.uid);
 	END IF;
     IF (NEW.role > 1) THEN
@@ -65,6 +66,8 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.userchecks;
 #trigger checks for userchecks #
 DELIMITER $$
 USE `attendencemadeeasy`$$
@@ -83,4 +86,21 @@ END$$
 DELIMITER ;
 
 
-
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.InsertPassWordNotHashedError;
+#trigger checks for passHash size on insert#
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.InsertPassWordNotHashedError
+BEFORE INSERT ON attendencemadeeasy.usertable
+FOR EACH ROW
+BEGIN
+	DECLARE MSG VARCHAR(255);
+    #Replace the 4 with Hash length size#
+	IF (char_length(NEW.passHash) < 4 ) THEN
+		SET msg = 'Unable to set password, Not Hashed';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+	END IF;
+END$$
+DELIMITER ;
