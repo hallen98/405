@@ -1,17 +1,34 @@
 <?php
+session_start();
 $servername = "138.47.204.77";
 $username = "commit";
-$password = "TempP@ss124"
+$password = "TempP@ss124";
 $dbname = "attendencemadeeasy";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-	die("Connection Failed: ") . $conn->connect_error);
+	die("Connection failed: " . $conn->connect_error);
 }
+$userEmail = "QL@gmail.com";
+$sql = "SELECT uid FROM attendencemadeeasy.usertable WHERE uid = $userID";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+    $userID = $row["uid"];
+    	echo $userID;
+	}
+} else {
+	echo "0 results";
+}
+$conn->close();
+
+$_SESSION["userID"] = $userID;
 
 ?>
+
 
 <html>
 <!-- THIS USES THE DISCORD IMAGE LINK FOR THE LOGO AT THE TOP -->
@@ -26,7 +43,7 @@ if ($conn->connect_error) {
 		<div class="login">
 			<h1>Login</h1>
 			<!-- marks the entire section as a form and sets up php submittion -->
-			<form action="/StudentHome/StudentHome.php" method="post">
+			<form action="validation.php" method="post">
 				<!-- creates the input boxes with css file style -->
 				<input type="text" name="email" placeholder="Email" id="email" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
