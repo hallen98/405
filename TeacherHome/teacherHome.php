@@ -1,5 +1,6 @@
 <!-- php connection initialization --> 
 <?php
+session_start();
 $servername = "138.47.204.77";
 $username = "commit";
 $password = "TempP@ss124";
@@ -76,10 +77,15 @@ $conn->close();
 		
 		<div id="menu" class="nav">                                                   <!-- links -->
 			<a href="/TeacherHome/teacherHome.php">Home</a>
-            <a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
-            <a href="/Settings/TeacherSettings.php">Settings</a>
+            		<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
+            		<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
+				<!-- php items necessary to remove credentials, destroy session -->
+				<?php
+				session_unset();
+				session_destroy();
+				?>
 			</div>
 		</div>
 		
