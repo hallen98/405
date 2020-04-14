@@ -1,35 +1,49 @@
 <?php
-/*$servername = "138.47.204.77";
+session_start();
+$userID = /*$_SESSION["userID"]*/ "1";
+$servername = "138.47.204.77";
 $username = "commit";
 $password = "TempP@ss124";
 $dbname = "attendencemadeeasy";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, 3306);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+	die("Connection failed: " . $conn->connect_error);
 }
-echo "Success" . PHP_EOL;
+$sql = "SELECT fname, lname FROM attendencemadeeasy.usertable WHERE uid = '$userID'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+		$firstName = $row["fname"];
+		$lastName = $row["lname"];
+	}
+} else {
+	echo "0 results";
+}
 
-//$sql = "SELECT id, firstname, lastname FROM MyGuests";
-//$result = $conn->query($sql);
+$sql = "use attendencemadeeasy;
+SET '$userID' = 2;
+SELECT  c1.className, c1.weekday, c1.classTime, s1.date, s1.location
+FROM attendencemadeeasy.student_attended s1, attendencemadeeasy.class c1
+WHERE s1.idStudent = '$userID' AND c1.archived = 0;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+		$firstName = $row["fname"];
+		$lastName = $row["lname"];
+	}
+} else {
+	echo "0 results";
+}
 
-//if ($result->num_rows > 0) {
-    // output data of each row
-//    while($row = $result->fetch_assoc()) {
-//        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-//    }
-//} else {
-//    echo "0 results";
-//}
-echo "hello";
-$conn->close();*/
-
-$studentName = "Hunter";
-$classes = ["CSC-405-002", "CSC-406-001", "CSC-407-003"];
-
+$conn->close();
+$name = $firstName . ' ' . $lastName;
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -81,7 +95,7 @@ $classes = ["CSC-405-002", "CSC-406-001", "CSC-407-003"];
 		
 		<!-- !!!!!!!!!!!! START OF PAGE CONTENT !!!!!!!!!!!! -->
 		
-		<h1 style="text-align: center"> Welcome <?php echo $studentName; ?></h1>
+		<h1 style="text-align: center"> Welcome <?php echo $name; ?></h1>
 		
 		<center><button class="cibtn">Check In To: CSC-405-001</button></center>		<!-- Check in button -->
 		<br><br>
