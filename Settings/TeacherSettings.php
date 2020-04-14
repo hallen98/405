@@ -1,5 +1,6 @@
 <!-- php connection initialization --> 
 <?php
+session_start();
 $servername = "138.47.204.77";
 $username = "commit";
 $password = "TempP@ss124";
