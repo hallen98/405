@@ -38,12 +38,17 @@
 			
 		</div>
 		
-		<div id="menu" class="nav">                                                    <!-- links -->
-			<a href="#">Current Classes</a>
-			<a href="#">Archived Classes</a>
-			<a href="#">Settings</a>
+		<div id="menu" class="nav">                                                   <!-- links -->
+			<a href="/TeacherHome/teacherHome.php">Home</a>
+            		<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
+            		<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
-				<a href="#">Logout</a>
+				<a href="/login/loginpage.php">Logout</a>
+				<!-- php items necessary to remove credentials, destroy session -->
+				<?php
+				session_unset();
+				session_destroy();
+				?>
 			</div>
 		</div>
 		
