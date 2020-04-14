@@ -78,6 +78,10 @@ $conn->close();
 			<a href="/Settings/StudentSettings.php">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
+				<?php
+				session_unset();
+				session_destroy();
+				?>
 			</div>
 		</div>
 
