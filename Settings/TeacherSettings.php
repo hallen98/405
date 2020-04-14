@@ -81,6 +81,11 @@ $conn->close();
 			<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
+				<!-- php items necessary to remove credentials, destroy session -->
+				<?php
+				session_unset();
+				session_destroy();
+				?>
 			</div>
 		</div>
 		<H1> Profile Settings</H1>
