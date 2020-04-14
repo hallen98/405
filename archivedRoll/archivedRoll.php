@@ -3,6 +3,7 @@
 <!--Hamburger menu code done by group member Noah Broussard -->
 
 <?php
+session_start();
 $servername = "138.47.204.77";
 $username = "commit";
 $password = "TempP@ss124";
@@ -86,6 +87,11 @@ $conn->close();
 			<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
 				<a href="/login/loginpage.php">Logout</a>
+				<!-- php items necessary to remove credentials, destroy session -->
+				<?php
+				session_unset();
+				session_destroy();
+				?>
 			</div>
 		</div>
 
