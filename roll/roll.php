@@ -1,7 +1,37 @@
-<!--Roll page -->
+<!--Archived roll page -->
 <!-- Code by Michael McCrary -->
 <!--Hamburger menu code done by group member Noah Broussard -->
+<?php
+session_start();
+$userID = /*$_SESSION["userID"]*/ "1";
+$servername = "138.47.204.77";
+$username = "commit";
+$password = "TempP@ss124";
+$dbname = "attendencemadeeasy";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT fname, lname FROM attendencemadeeasy.usertable WHERE uid = '$userID'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+		$firstName = $row["fname"];
+		$lastName = $row["lname"];
+	}
+} else {
+	echo "0 results";
+}
+#---------- HARD CODED VALUES REPLACE WITH SERVER CODING FROM DOAN ---------
+#---------- REFORMATTING MAY BE NEEDED ------------
+
+$dates = ["3/16", "3/18", "3/20", "3/23", "3/25", "3/27"];
+$attendanceData = ["x", "-", "-", "x", "x", "x"];
+?>
 
 <!DOCTYPE html>
 <html>
@@ -46,19 +76,41 @@
 
 		<div id="menu" class="nav">
 			<!-- links -->
-			<a href="/TeacherHome/teacherHome.php">Current Classes</a>
-			<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
-			<a href="/Settings/TeacherSettings.php">Settings</a>
+			<a href="#">Current Classes</a>
+			<a href="#">Archived Classes</a>
+			<a href="#">Settings</a>
 			<div class="last">
-				<a href="/login/loginpage.php">Logout</a>
+				<a href="#">Logout</a>
 			</div>
 		</div>
 
 
 		<!-- Header of Page Section with AME title -->
 		<h1 style="text-align: center">CSC-406-002</h1>
-
+		
 		<table class="center">
+		<?php
+			echo "<tr>";
+			for ($i=0; $i<count($dates); $i++){
+				echo "<th><p>\"$dates[$i]\"</p></th>";
+			}
+			for ($i=0; $i<count($attendanceData); $i++){
+				echo "<td><p>\"$attendanceData[$i]\"</p></td>";
+			}
+		?>
+		<!-- OLD CODE BELOW -->
+		<!--<table class="center">
+			<tr>
+				<th>
+					<p>Student Name</p>
+				</th>
+				?php for ($i=0; $i<5; $i++) { ?>
+				<th>
+					<p>?php echo $i; ?></p>
+				</th>
+				?php } ?>
+			</tr>
+		<!-- <table class="center">
 			<tr>
 				<th>
 					<p>Student Name</p>
@@ -305,10 +357,7 @@
 			<td>
 				<p>x</p>
 			</td>
-			</tr>
-			<tr>
-				<td><button class="ExportBtn">Export to CSV</button></td>
-			</tr>
+			</tr> -->
 		</table>
 	</div>
 </body>
