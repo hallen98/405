@@ -1,8 +1,8 @@
-DROP EVENT IF EXISTS studentroll;
+#DROP EVENT IF EXISTS studentroll;
 DELIMITER $$
 CREATE EVENT studentroll 
 ON SCHEDULE 
-EVERY 1 MINUTE  
+EVERY 1 day_hour  
 DO 
 BEGIN
 	SET @curr = weekday(curdate());
