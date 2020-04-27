@@ -70,7 +70,7 @@ h1{
 }
 #startDay {
 	position:absolute;
-	left: 155px;
+	left: 180px;
 }
 #startDate{
 	text-align: center;
@@ -82,11 +82,11 @@ h1{
 
 #endDay {
 	position:absolute;
-	left: 555px;
+	left: 570px;
 }
 #quarterSelect{
 	position:absolute;
-	left: 1400px;
+	left: 1200px;
 }
 label {
 	display: block;
