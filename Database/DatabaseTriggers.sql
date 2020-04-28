@@ -116,8 +116,10 @@ TRIGGER attendencemadeeasy.deletestudent
 BEFORE DELETE ON attendencemadeeasy.student
 FOR EACH ROW
 BEGIN
-	DELETE FROM attendencemadeeasy.student_attended WHERE User_uid = idStudent;
-    DELETE FROM attendencemadeeasy.student_has_classes WHERE User_uid = sid;
-    DELETE FROM attendencemadeeasy.student_inclass WHERE User_uid = sid;
+	SET sql_safe_updates=0;
+	DELETE FROM attendencemadeeasy.student_attended USING attendencemadeeasy.student_attended,attendencemadeeasy.student WHERE OLD.User_uid = idStudent;
+    DELETE FROM attendencemadeeasy.student_attended USING attendencemadeeasy.student_has_classes,attendencemadeeasy.student WHERE OLD.User_uid = sid;
+    DELETE FROM attendencemadeeasy.student_attended USING attendencemadeeasy.student_inclasses,attendencemadeeasy.student WHERE OLD.User_uid = sid;
+    SET sql_safe_updates=1;
 END$$
 DELIMITER ;
