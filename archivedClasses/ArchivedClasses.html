@@ -158,7 +158,7 @@ $tarchivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 					if(isset($_POST['unarchive'])){
 						if(!empty($_POST['checkedClasses'])) {
 							foreach($_POST['checkedClasses'] as $class){
-								#-------- CODE FOR UNARCHIVING A CLASS HERE
+								UPDATE class SET dataarchived = NULL, archived = 0 WHERE idclasses = $class;
 							}
 						}
 					}
@@ -168,7 +168,7 @@ $tarchivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 					if(isset($_POST['deleteClass'])){
 						if(!empty($_POST['checkedClasses'])) {
 							foreach($_POST['checkedClasses'] as $class){
-								#-------- CODE FOR DELETING A CLASS HERE
+								DELETE * FROM attendancemadeeasy.class WHERE idclasses = $class;
 							}
 						}
 					}
