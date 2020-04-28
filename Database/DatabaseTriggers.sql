@@ -104,3 +104,20 @@ BEGIN
 	END IF;
 END$$
 DELIMITER ;
+
+
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.deletestudent;
+#trigger checks for passHash size on insert#
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.deletestudent
+BEFORE DELETE ON attendencemadeeasy.student
+FOR EACH ROW
+BEGIN
+	DELETE FROM attendencemadeeasy.student_attended WHERE User_uid = idStudent;
+    DELETE FROM attendencemadeeasy.student_has_classes WHERE User_uid = sid;
+    DELETE FROM attendencemadeeasy.student_inclass WHERE User_uid = sid;
+END$$
+DELIMITER ;
