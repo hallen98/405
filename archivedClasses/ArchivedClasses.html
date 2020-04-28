@@ -23,11 +23,16 @@ if ($result->num_rows > 0) {
 } else {
 	echo "0 results";
 }
+
+$classes = SELECT className FROM attendencemadeeasy.class WHERE tid_class = $userID;
+$dates = SELECT classTime FROM attendencemadeeasy.class WHERE tid_class = $userID;
+$archivedDate = SELECT dataarchived FROM attendencemadeeasy.class WHERE tid_class = $userID;
+
 #-------------- TEMP HARD CODED VALUES --------------
 
-$classes = ["CSC 405 001", "CSC 365 003", "CSC 420 069"]
-$dates = ["MWF 2-3:15", "TR 12-1:50", "MWF 1-2:15"]
-$archivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
+$tclasses = ["CSC 405 001", "CSC 365 003", "CSC 420 069"]
+$tdates = ["MWF 2-3:15", "TR 12-1:50", "MWF 1-2:15"]
+$tarchivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 
 ?>
 
@@ -106,7 +111,7 @@ $archivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 			<?php
 			for ($i=0; $i<count($classes); $i++){
 				echo "<tr>"
-				echo <<<EOT <td><input type="checkbox" name="$classes[$i]"></td> EOT;
+				echo <<<EOT <td><input type="checkbox" name="checkedClasses[]" value="$classes[$i]"></td> EOT;
 				echo "<td>\"$dates[$i]\"</td>"
 				echo "<td>\"$archivedDate[$i]\"</td>"
 				echo "</tr>"
@@ -147,8 +152,28 @@ $archivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 					</tr>
 				</table><br>
 				-->
-				<button type="button">Unarchive</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<button type="button">Delete</button>
+				<form method="post" action="">
+				<button type="unarchive" name="unarchive" value="unarchive">Unarchive</button>
+				<?php
+					if(isset($_POST['unarchive'])){
+						if(!empty($_POST['checkedClasses'])) {
+							foreach($_POST['checkedClasses'] as $class){
+								#-------- CODE FOR UNARCHIVING A CLASS HERE
+							}
+						}
+					}
+				?>
+				<button type="deleteClass" name="deleteClass" value="deleteClass">Delete</button>
+				<?php
+					if(isset($_POST['deleteClass'])){
+						if(!empty($_POST['checkedClasses'])) {
+							foreach($_POST['checkedClasses'] as $class){
+								#-------- CODE FOR DELETING A CLASS HERE
+							}
+						}
+					}
+				?>
+				</form>
 			</div>
 		</div>
 	</div>
