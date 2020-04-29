@@ -137,7 +137,7 @@ BEFORE DELETE ON attendencemadeeasy.student_attended
 FOR EACH ROW
 BEGIN
 	SET SQL_SAFE_UPDATES=0;
-	DELETE FROM attendencemadeeasy.student_has_classes USING attendencemadeeasy.student_has_classes WHERE OLD.idStudent = sid;
+	DELETE FROM student_has_classes WHERE OLD.idStudent = sid;
     SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
@@ -187,7 +187,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-#Delete from SHC table
+#DO NOT USE
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.shclassdelete;
 DELIMITER $$
 USE `attendencemadeeasy`$$
@@ -198,7 +198,7 @@ BEFORE DELETE ON attendencemadeeasy.student_inclass
 FOR EACH ROW
 BEGIN
 	SET SQL_SAFE_UPDATES=0;
-	DELETE FROM student_has_classes AS shc WHERE OLD.classes_idclasses = shc.classes_idclasses AND OLD.classes_teacher_idteacher = shc.classes_teacher_idteacher;
+	DELETE FROM student_has_classes WHERE OLD.classes_idclasses = classes_idclasses AND OLD.classes_teacher_idteacher = classes_teacher_idteacher;
     SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
@@ -216,7 +216,7 @@ BEFORE DELETE ON attendencemadeeasy.student_inclass
 FOR EACH ROW
 BEGIN
 	SET SQL_SAFE_UPDATES=0;
-	DELETE FROM attendencemadeeasy.student_has_class AS shc WHERE OLD.sid = shc.sid AND OLD.classes_idclasses = shc.classes_idclasses;
+	DELETE FROM student_has_classes WHERE OLD.sid = sid AND OLD.classes_idclasses = classes_idclasses;
     SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
