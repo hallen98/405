@@ -182,7 +182,7 @@ BEFORE DELETE ON attendencemadeeasy.class
 FOR EACH ROW
 BEGIN
 	SET SQL_SAFE_UPDATES=0;
-	DELETE FROM student_inclass USING attendencemadeeasy.student_inclass WHERE OLD.idclasses = classes_idclasses AND OLD.tid_class = classes_teacher_idteacher;
+	DELETE FROM student_inclass WHERE OLD.idclasses = classes_idclasses AND OLD.tid_class = classes_teacher_idteacher;
     SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
