@@ -182,10 +182,11 @@ BEGIN
 END$$
 DELIMITER ;
 
+#Delete from SHC table
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.shclassdelete;
 DELIMITER $$
 USE `attendencemadeeasy`$$
-CREATE
+CREATE 
 DEFINER=`root`@`localhost`
 TRIGGER attendencemadeeasy.shclassdelete
 BEFORE DELETE ON attendencemadeeasy.student_inclass
