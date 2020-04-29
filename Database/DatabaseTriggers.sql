@@ -105,6 +105,11 @@ BEGIN
 END$$
 DELIMITER ;
 
+#####
+#UPDATE FROM HERE 
+#####
+
+
 #BEGIN STUDENT DELETE TRIGGERS
 DROP TRIGGER  IF EXISTS  attendencemadeeasy.deletestudent;
 #trigger checks for passHash size on insert#
@@ -198,3 +203,20 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+
+#BEGIN CLASS DELETE TRIGGERS
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.studentdeletesclass;
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.studentdeletesclass
+BEFORE DELETE ON attendencemadeeasy.student_inclass
+FOR EACH ROW
+BEGIN
+	SET SQL_SAFE_UPDATES=0;
+	DELETE FROM attendencemadeeasy.student_has_class AS shc WHERE OLD.sid = shc.sid AND OLD.classes_idclasses = shc.classes_idclasses;
+    SET SQL_SAFE_UPDATES=1;
+END$$
+DELIMITER ;
