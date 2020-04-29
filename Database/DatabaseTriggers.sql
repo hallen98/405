@@ -116,11 +116,13 @@ TRIGGER attendencemadeeasy.deletestudent
 BEFORE DELETE ON attendencemadeeasy.student
 FOR EACH ROW
 BEGIN
+	SET SQL_SAFE_UPDATES=0;
 	DELETE FROM attendencemadeeasy.student_attended USING attendencemadeeasy.student_attended WHERE OLD.User_uid = idStudent;
+	SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
 
-DROP TRIGGER  IF EXISTS  attendencemadeeasy.deletestudentattend;
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.deletestudentattended;
 DELIMITER $$
 USE `attendencemadeeasy`$$
 CREATE
@@ -129,7 +131,9 @@ TRIGGER attendencemadeeasy.deletestudentattended
 BEFORE DELETE ON attendencemadeeasy.student_attended
 FOR EACH ROW
 BEGIN
+	SET SQL_SAFE_UPDATES=0;
 	DELETE FROM attendencemadeeasy.student_has_classes USING attendencemadeeasy.student_has_classes WHERE OLD.idStudent = sid;
+    SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
 
@@ -142,7 +146,9 @@ TRIGGER attendencemadeeasy.deletestudentclass
 BEFORE DELETE ON attendencemadeeasy.student
 FOR EACH ROW
 BEGIN
+	SET SQL_SAFE_UPDATES=0;
 	DELETE FROM student_inclass USING attendencemadeeasy.student_inclass WHERE OLD.User_uid = sid;
+    SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
 
@@ -170,6 +176,24 @@ TRIGGER attendencemadeeasy.classdelete
 BEFORE DELETE ON attendencemadeeasy.class
 FOR EACH ROW
 BEGIN
+	SET SQL_SAFE_UPDATES=0;
 	DELETE FROM student_inclass USING attendencemadeeasy.student_inclass WHERE OLD.idclasses = classes_idclasses AND OLD.tid_class = classes_teacher_idteacher;
+    SET SQL_SAFE_UPDATES=1;
 END$$
 DELIMITER ;
+
+DROP TRIGGER  IF EXISTS  attendencemadeeasy.shclassdelete;
+DELIMITER $$
+USE `attendencemadeeasy`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER attendencemadeeasy.shclassdelete
+BEFORE DELETE ON attendencemadeeasy.student_inclass
+FOR EACH ROW
+BEGIN
+	SET SQL_SAFE_UPDATES=0;
+	DELETE FROM student_has_classes AS shc WHERE OLD.classes_idclasses = shc.classes_idclasses AND OLD.classes_teacher_idteacher = shc.classes_teacher_idteacher;
+    SET SQL_SAFE_UPDATES=1;
+END$$
+DELIMITER ;
+
