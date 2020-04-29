@@ -101,6 +101,7 @@ $tarchivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 		<div id="archivedClasses">
 			</div>
 			<div class="container">
+			<form method="post" action="">
 				<table style="width:90%" class="center">
 				<tr>
 					<th><input type="checkbox" onClick="toggle(this)" /> </th>
@@ -110,49 +111,15 @@ $tarchivedDate = ["12/17/2019", "3/16/2020", "4/20/6969"]
 				</tr>
 			<?php
 			for ($i=0; $i<count($classes); $i++){
-				echo "<tr>"
-				echo <<<EOT <td><input type="checkbox" name="checkedClasses[]" value="$classes[$i]"></td> EOT;
-				echo "<td>\"$dates[$i]\"</td>"
-				echo "<td>\"$archivedDate[$i]\"</td>"
-				echo "</tr>"
+				echo "<tr>";
+				echo "<td><input type='checkbox' name='checkedClasses[]' value=".$classes[$i]."></td>";
+				echo "<td>".$classes[$i]."</td>";
+				echo "<td>".$dates[$i]."</td>";
+				echo "<td>".$archivedDate[$i]."</td>";
+				echo "</tr>";
 			}
 			?>
-			<!--
-			<div class="container">
-				<table style="width:90%" class="center">
-					<tr>
-						<th><input type="checkbox" onClick="toggle(this)" /> </th>
-						<th>Name</th>
-						<th>Class Date</th>
-						<th>Archived Date</th>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name= "check" />     </td>
-						<td>CSC-405-001</td>
-						<td>MWF 2:00 - 3:15</td>
-						<td>10/15/17</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name= "check" />     </td>
-						<td>CSC-405-001</td>
-						<td>MWF 2:00 - 3:15</td>
-						<td>10/15/18</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name= "check" />     </td>
-						<td>CSC-405-001</td>
-						<td>MWF 2:00 - 3:15</td>
-						<td>10/15/19</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name= "check" />     </td>
-						<td>CSC-405-001</td>
-						<td>MWF 2:00 - 3:15</td>
-						<td>10/15/20</td>
-					</tr>
 				</table><br>
-				-->
-				<form method="post" action="">
 				<button type="unarchive" name="unarchive" value="unarchive">Unarchive</button>
 				<?php
 					if(isset($_POST['unarchive'])){
