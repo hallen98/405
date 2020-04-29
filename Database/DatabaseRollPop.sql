@@ -2,7 +2,7 @@
 DELIMITER $$
 CREATE EVENT studentroll 
 ON SCHEDULE 
-EVERY 1 day_hour  
+EVERY 1 HOUR 
 DO 
 BEGIN
 	SET @curr = weekday(curdate());
