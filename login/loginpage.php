@@ -11,7 +11,7 @@
 		<div class="login">
 			<h1>Login</h1>
 			<!-- marks the entire section as a form and sets up php submittion -->
-			<form action="/StudentHome/StudentHome.php" method="post">
+			<form action="/login/verification.php" method="post">
 				<!-- creates the input boxes with css file style -->
 				<input type="text" name="email" placeholder="Email" id="email" required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
