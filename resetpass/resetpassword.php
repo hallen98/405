@@ -10,7 +10,7 @@
 	<body>
 		<div class="resetpass">
 			<h1>Reset Password</h1>
-			<form action="/resetpass/resetpassword.php" method="post">
+			<form action="/resetpass/resetRedirect.php" method="post">
 				<!-- sets up input boxes -->
 				<input type="text" name="email" placeholder="Email Address" id="email" required>
 				<input type="password" name="password" placeholder="New Password" id="password" required>
