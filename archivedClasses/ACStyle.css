@@ -1,3 +1,37 @@
+.acbtn {
+	width: 100px;
+  	padding: 10px;
+  	background-color: #002F8B;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+	font-size: 14px;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+	margin: 5px;
+}
+.acbtn:hover {
+	background-color: #000070;
+  	transition: background-color 0.2s;
+}
+.delbtn {
+	width: 100px;
+  	padding: 10px;
+  	background-color: #E31B23;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+	font-size: 14px;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+	margin: 5px;
+}
+.delbtn:hover {
+	background-color: #940000;
+  	transition: background-color 0.2s;
+}
 body{
 	font-family: 'Arial', sans-serif;
 }
@@ -111,20 +145,25 @@ select {
 	position: relative;	
 }
 
-table, td {
+table {
+    	border-bottom: 1px solid black;
 	border-collapse: collapse;
+
 }
 
-th{
-	height: 50px;
-	font-size: 30px;
+.tableRow {
+    	border: 1px solid black;
+	border-collapse: collapse;
 }
-td { 
+th, tr, td {
 	text-align: center;
-	height: 30px;
-	font-size: 16px;
-	border: 1px solid black;
 }
-button {
-	font-size: 30px;
+th{
+	font-size: 22px;
+	line-height: 50px;
+}
+.checkBoxes {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100px;
 }
