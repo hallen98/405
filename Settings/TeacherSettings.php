@@ -1,3 +1,7 @@
+<?php
+session_start();
+$userID = $_SESSION["userID"];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,41 +43,43 @@
 		</div>
 
 		<div id="menu" class="nav">                                                          <!-- links -->
-			<a href="/TeacherHome/teacherHome.php">Current Classes</a>
+			<a href="/TeacherHome/teacherHome.php">Home</a>
 			<a href="/archivedClasses/ArchivedClasses.php">Archived Classes</a>
 			<a href="/Settings/TeacherSettings.php">Settings</a>
 			<div class="last">
-				<a href="/login/loginpage.php">Logout</a>
+				<a href="/logout.php">Logout</a>
 			</div>
 		</div>
 		<H1> Profile Settings</H1>
-
-		<div id = "DeleteWrapper">
-			<div class="RedBoxed">
-				Delete Account
-				<input type="checkbox" id="Delete" name="Delete">
-			</div><br>
-			By checking the box, AttendMe will <br>
-			permanently delete your account and it <br>
-			<b>CANNOT BE UNDELETED</b>, by checking <br>
-			the box you understand and agree to <br>
-			the terms above
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		</div>
-
 		<div class="Input">
-			<form action=#>
-				<input type="text" id="FirstName" name="FirstName" placeholder="First Name"><br><br>
-				<input type="text" id="LastName" name="LastName" placeholder="Last Name"><br><br><br><br><br><br><br><br><br><br>
-				<input type="text" id="NewEmail" name="NewEmail" placeholder="New Email"><br><br>
-				<input type="text" id="ConfirmEmail" name="ConfirmEmail" placeholder="Confirm Email"><br><br><br><br><br><br><br><br><br><br>
-				<input type="password" id="NewPassword" name="NewPassword" placeholder="New Password"><br><br>
-				<input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
+			<form action="/Settings/SettingsChange.php" method="post">
+				<div class="column">
+					<input type="text" id="FirstName" name="FirstName" placeholder="First Name"><br><br>
+					<input type="text" id="LastName" name="LastName" placeholder="Last Name"><br><br><br><br><br><br><br><br><br><br>
+					<input type="text" id="NewEmail" name="NewEmail" placeholder="New Email"><br><br>
+					<input type="text" id="ConfirmEmail" name="ConfirmEmail" placeholder="Confirm Email"><br><br><br><br><br><br><br><br><br><br>
+					<input type="password" id="NewPassword" name="NewPassword" placeholder="New Password"><br><br>
+					<input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
+				</div>
+				
+				<div class="column2">
+					<div id = "DeleteWrapper">
+						<div class="RedBoxed">
+							Delete Account
+							<input type="checkbox" id="Delete" name="Delete">
+						</div><br>
+						By checking the box, AttendMe will <br>
+						permanently delete your account and it <br>
+						<b>CANNOT BE UNDELETED</b>, by checking <br>
+						the box you understand and agree to <br>
+						the terms above
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</div>
+					<div id = "ButtonWrapper">
+						<button type="submit">Confirm Changes</button>
+					</div>
+				</div>
 			</form>
-		</div>
-
-		<div id = "ButtonWrapper">
-			<button type="button">Confirm Changes</button>
 		</div>
 	</div>
 </body>
