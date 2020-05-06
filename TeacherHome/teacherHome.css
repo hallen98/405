@@ -80,3 +80,9 @@ th{
 	border-collapse: collapse;
 	width: 100px;
 }
+.classcode {
+	visibility: hidden;
+	float: left;
+	height: 30px;
+	text-align: center;
+}
