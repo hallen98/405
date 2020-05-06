@@ -10,7 +10,7 @@
 	<body>
 		<div class="signup">
 			<h1>Create Account</h1>
-			<form action="/login/loginpage.php" method="post">
+			<form action="/signup/signupForm.php" method="post">
 				<!-- sets up input boxes -->
 				<input type="text" name="firstname" placeholder="First Name" id="firstname" required>
 				<input type="text" name="lastname" placeholder="Last Name" id="lastname" required>
@@ -25,7 +25,7 @@
 					<label for="teacher">I am a Teacher.</label><br>
 				</p>
 				<script src="confirmpw.js"></script>
-				<input type="submit" value="Submit" href="/login/LoginPage.php">
+				<input type="submit" value="Submit">
 			</form>
 		</div>
 	</body>
